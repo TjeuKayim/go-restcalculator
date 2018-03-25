@@ -2,7 +2,7 @@
 
 A REST server for the [newton-api](https://github.com/aunyks/newton-api) that uses Go's standard library.
 
-*Currently, it only supports the `abs` operation.*
+*Currently, it only supports the `abs` and `log` operations.*
 
 ## Newton-API
 
