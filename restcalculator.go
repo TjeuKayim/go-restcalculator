@@ -9,10 +9,7 @@ import (
 
 func main() {
 	http.HandleFunc(absPath, abs)
-	err := http.ListenAndServe(":8090", nil)
-	if err != nil {
-		panic(err)
-	}
+	log.Fatal(http.ListenAndServe(":8090", nil))
 }
 
 const absPath = "/abs/"
