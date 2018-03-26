@@ -7,6 +7,7 @@ import (
 	"strings"
 	"math"
 	"encoding/json"
+	"os"
 )
 
 var operations = []Operation{
@@ -19,7 +20,8 @@ func main() {
 	for _, operation := range operations {
 		http.Handle(operation.endpoint(), operation)
 	}
-	log.Fatal(http.ListenAndServe(":5000", nil))
+	port := os.Getenv("PORT")
+	log.Fatal(http.ListenAndServe(":"+port, nil))
 }
 
 type Operation struct {
