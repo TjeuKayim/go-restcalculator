@@ -15,6 +15,7 @@ var operations = []Operation{
 }
 
 func main() {
+	log.Print("Starting restcalculator")
 	for _, operation := range operations {
 		http.Handle(operation.endpoint(), operation)
 	}
