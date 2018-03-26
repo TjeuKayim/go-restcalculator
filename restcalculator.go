@@ -19,7 +19,7 @@ func main() {
 	for _, operation := range operations {
 		http.Handle(operation.endpoint(), operation)
 	}
-	log.Fatal(http.ListenAndServe(":8090", nil))
+	log.Fatal(http.ListenAndServe(":5000", nil))
 }
 
 type Operation struct {
