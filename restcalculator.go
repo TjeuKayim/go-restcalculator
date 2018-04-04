@@ -7,6 +7,7 @@ import (
 	"strings"
 	"math"
 	"encoding/json"
+	"os"
 )
 
 var operations = []Operation{
@@ -15,10 +16,12 @@ var operations = []Operation{
 }
 
 func main() {
+	log.Print("Starting restcalculator")
 	for _, operation := range operations {
 		http.Handle(operation.endpoint(), operation)
 	}
-	log.Fatal(http.ListenAndServe(":8090", nil))
+	port := os.Getenv("PORT")
+	log.Fatal(http.ListenAndServe(":"+port, nil))
 }
 
 type Operation struct {
