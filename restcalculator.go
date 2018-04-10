@@ -1,7 +1,5 @@
 package main
 
-Add some invalid syntax to this file to see the reaction of travis.
-
 import (
 	"log"
 	"net/http"
